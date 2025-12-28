@@ -2,7 +2,7 @@ name: Update CSV Daily
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 毎日9:00(JST)に実行されるように調整済み
+    - cron: "0 0 * * *"   # 毎日9:00(JST)に相当
   workflow_dispatch:      # 手動実行も可能
 
 jobs:
@@ -20,7 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas yfinance matplotlib requests
+          pip install numpy
+          pip install -r requirements.txt
 
       - name: Run TargetBuyPBR.py
         run: |
@@ -30,7 +31,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add .
+          git add daily_option_data.csv
           git commit -m "Auto update CSV"
           git push
         continue-on-error: true
