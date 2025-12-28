@@ -9,9 +9,9 @@ from scipy.stats import norm
 from scipy.optimize import brentq
 import yfinance as yf
 
-SAVE_DIR = r"C:\temp\option\TargetBuy\jpx_daily"
-os.makedirs(SAVE_DIR, exist_ok=True)
-OUTPUT_CSV = os.path.join(SAVE_DIR, "daily_option_data.csv")
+SAVE_DIR = "."
+OUTPUT_CSV = "daily_option_data.csv"
+
 
 TARGET_CODES = [
     "7203","9432","9984","6758","8306","8035","6861","4502",
@@ -264,3 +264,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
