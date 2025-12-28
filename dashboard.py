@@ -19,7 +19,7 @@ code_to_name = {
 }
 
 # CSVパス
-csv_path = r"C:\temp\option\TargetBuy\jpx_daily\daily_option_data.csv"
+csv_path = "daily_option_data.csv"
 
 # ---------------------------------------------------------
 # 🔘 今すぐ更新ボタン（TargetBuyPBR.py 実行）
@@ -165,3 +165,4 @@ if st.checkbox("IVの推移も表示する"):
     ax.legend()
 
     st.pyplot(fig2)
+
